@@ -1,0 +1,62 @@
+{% extends "base.html" %}
+
+{% block main %}
+  <div class="container-xxl">
+
+    <div style="padding: 100px 12px 40px;">
+      <h3>{{ _('Search Results') }}</h3>
+    </div>
+
+    {% for cat, msg in get_flashed_messages(True) %}
+      <div class="flash_{{cat}}">{{msg}}</div>
+    {% endfor %}
+
+    <div class="row">
+      {% for task in tasks %}
+        <div class="col-12 col-md-6 col-lg-4 card-group" style="margin-bottom: 25px;">
+          <div class="card shadow-sm">
+            <div class="card-header" style="{% if task.in_progress == True %}
+                                              background-color: #e3f2fd;
+                                            {% endif %}">
+              <form method="post">
+                <div class="row" style="padding-top: 5px;">
+                  <h5 class="col-11">{{ task.title }}</h5>
+                  <button name="delete_id" type="submit" value="{{ task.id }}"
+                          class="btn-close col" aria-label="Close"></button>
+                </div>
+              </form>
+            </div>
+            <div class="card-body" style="padding: 8px 16px 8px;">
+              <p class="card-text">{{ _('Address:') }} {{ task.address }}</p>
+            </div>
+            <div class="card-body" style="padding: 8px 16px 8px;">
+              <p class="card-text">{{ _('Price:') }} {{ task.price }}</p>
+            </div>
+            <div class="card-body" style="padding: 8px 16px 8px;">
+              <p class="card-text">{{ _('Note:') }} {{ task.note }}</p>
+            </div>
+            <div class="card-footer">
+              <p class="card-text" style="padding: 10px 0;">{{ task.date }}</p>
+            </div>
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+
+    <nav aria-label="pager">
+      <ul class="pagination justify-content-center">
+        <li class="page-item {% if not prev_url %}disabled{% endif %}">
+          <a class="page-link" href="{{ prev_url or '#' }}" tabindex="-1" aria-disabled="true">
+              {{ _('Previous') }}
+          </a>
+        </li>
+        <li class="page-item {% if not next_url %}disabled{% endif %}">
+          <a class="page-link" href="{{ next_url or '#' }}">
+              {{ _('Next') }}
+          </a>
+        </li>
+      </ul>
+    </nav>
+
+  </div>
+{% endblock %}

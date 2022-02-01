@@ -1,0 +1,477 @@
+# Russian translations for PROJECT.
+# Copyright (C) 2021 ORGANIZATION
+# This file is distributed under the same license as the PROJECT project.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2021.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PROJECT VERSION\n"
+"Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
+"POT-Creation-Date: 2021-03-08 19:24+0200\n"
+"PO-Revision-Date: 2021-02-23 16:56+0200\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: ru\n"
+"Language-Team: ru <LL@li.org>\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
+"n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.9.0\n"
+
+#: app/__init__.py:22
+msgid "Please log in to access this page."
+msgstr "Пожалуйста, авторизуйтесь, чтобы получить доступ к этой странице"
+
+#: app/auth/email.py:9
+msgid "[AmitrisClean] Reset Your Password"
+msgstr "[AmitrisClean] Смена пароля"
+
+#: app/auth/forms.py:18 app/auth/forms.py:26 app/auth/forms.py:41
+msgid "Password"
+msgstr "Пароль"
+
+#: app/auth/forms.py:19
+msgid "Remember Me"
+msgstr "Запомнить"
+
+#: app/auth/forms.py:23 app/users/forms.py:14
+msgid "First name"
+msgstr "Имя"
+
+#: app/auth/forms.py:24 app/users/forms.py:15
+msgid "Last name"
+msgstr "Фамилия"
+
+#: app/auth/forms.py:27 app/auth/forms.py:43
+msgid "Repeat Password"
+msgstr "Повторите пароль"
+
+#: app/auth/forms.py:33
+msgid "Please use a different email address."
+msgstr "Пожалуйста, используйте другой адрес электронной почты."
+
+#: app/auth/routes.py:31
+msgid "Invalid username or password"
+msgstr "Неправильное имя пользователя или пароль"
+
+#: app/auth/routes.py:38
+msgid "Sign In"
+msgstr "Вход"
+
+#: app/auth/routes.py:64
+msgid "Congratulations, you are now a registered user!"
+msgstr "Поздравляем, теперь вы зарегистрированный пользователь!"
+
+#: app/auth/routes.py:66 app/templates/auth/register.html:33
+msgid "Register"
+msgstr "Регистрация"
+
+#: app/auth/routes.py:79
+msgid "Check your email for the instructions to reset your password"
+msgstr ""
+"Проверьте свою электронную почту, чтобы получить инструкции по сбросу "
+"пароля."
+
+#: app/auth/routes.py:82
+msgid "User with this email doesn't exist"
+msgstr "Пользователя с таким адресом электронной почты не существует"
+
+#: app/auth/routes.py:85
+msgid "Reset Password"
+msgstr "Сменить пароль"
+
+#: app/auth/routes.py:99
+msgid "Your password has been reset."
+msgstr "Ваш пароль был изменен."
+
+#: app/desk/forms.py:16
+msgid "Support"
+msgstr "Поддержка"
+
+#: app/desk/forms.py:16
+msgid "General"
+msgstr "Генеральная"
+
+#: app/desk/forms.py:18
+msgid "January"
+msgstr "Январь"
+
+#: app/desk/forms.py:18
+msgid "February"
+msgstr "Февраль"
+
+#: app/desk/forms.py:18
+msgid "March"
+msgstr "Март"
+
+#: app/desk/forms.py:19
+msgid "April"
+msgstr "Апрель"
+
+#: app/desk/forms.py:19
+msgid "May"
+msgstr "Май"
+
+#: app/desk/forms.py:19
+msgid "June"
+msgstr "Июнь"
+
+#: app/desk/forms.py:20
+msgid "July"
+msgstr "Июль"
+
+#: app/desk/forms.py:20
+msgid "August"
+msgstr "Август"
+
+#: app/desk/forms.py:20
+msgid "September"
+msgstr "Сентябрь"
+
+#: app/desk/forms.py:21
+msgid "October"
+msgstr "Октябрь"
+
+#: app/desk/forms.py:21
+msgid "November"
+msgstr "Ноябрь"
+
+#: app/desk/forms.py:21
+msgid "December"
+msgstr "Декабрь"
+
+#: app/desk/forms.py:25 app/desk/forms.py:40
+msgid "Type of work:"
+msgstr "Тип работы:"
+
+#: app/desk/forms.py:26 app/templates/desk/archive.html:40
+#: app/templates/desk/calendar.html:80 app/templates/desk/calendar.html:98
+#: app/templates/desk/task_board.html:40 app/templates/search.html:28
+#: app/templates/search.html:57 app/templates/users/profile.html:56
+#: app/users/forms.py:19
+msgid "Address:"
+msgstr "Адрес:"
+
+#: app/desk/forms.py:28 app/templates/desk/archive.html:49
+#: app/templates/desk/calendar.html:86 app/templates/desk/calendar.html:101
+#: app/templates/desk/task_board.html:49 app/templates/search.html:34
+#: app/templates/search.html:63
+msgid "Note:"
+msgstr "Примечание:"
+
+#: app/desk/forms.py:29 app/templates/desk/archive.html:44
+#: app/templates/desk/calendar.html:83 app/templates/desk/task_board.html:44
+#: app/templates/search.html:31 app/templates/search.html:60
+#: app/templates/users/profile.html:60 app/users/forms.py:17
+msgid "Price:"
+msgstr "Цена:"
+
+#: app/desk/forms.py:31 app/desk/forms.py:43
+msgid "Time:"
+msgstr "Время:"
+
+#: app/desk/forms.py:32 app/desk/forms.py:44
+msgid "Day:"
+msgstr "День:"
+
+#: app/desk/forms.py:34 app/desk/forms.py:45 app/desk/forms.py:56
+msgid "Month:"
+msgstr "Месяц:"
+
+#: app/desk/forms.py:35 app/desk/forms.py:46 app/desk/forms.py:57
+msgid "Year:"
+msgstr "Год:"
+
+#: app/desk/forms.py:36 app/desk/forms.py:47 app/users/forms.py:23
+msgid "Add"
+msgstr "Добавить"
+
+#: app/desk/forms.py:41
+msgid "Client:"
+msgstr "Клиент:"
+
+#: app/desk/forms.py:42
+msgid "Addition:"
+msgstr "Дополнительно:"
+
+#: app/desk/forms.py:58
+msgid "Set"
+msgstr "Установить"
+
+#: app/desk/forms.py:62
+msgid "What to search?"
+msgstr "Что искать?"
+
+#: app/desk/routes.py:41 app/templates/desk/task_board.html:8
+msgid "Records board"
+msgstr "Доска записей"
+
+#: app/desk/routes.py:64
+msgid "Select client"
+msgstr "Выбор клиента"
+
+#: app/desk/routes.py:74 app/desk/routes.py:100
+msgid "Invalid input"
+msgstr "Некорректный ввод"
+
+#: app/desk/routes.py:90 app/desk/routes.py:113
+msgid "New Record"
+msgstr "Добавить запись"
+
+#: app/desk/routes.py:121 app/templates/desk/archive.html:13
+msgid "Records archive"
+msgstr "Архив записей"
+
+#: app/desk/routes.py:140
+msgid "Calendar settings"
+msgstr "Настройки календаря"
+
+#: app/desk/routes.py:171 app/templates/base.html:29
+#: app/templates/desk/calendar.html:14 app/templates/desk/set_calendar.html:13
+msgid "Calendar"
+msgstr "Календарь"
+
+#: app/desk/routes.py:210 app/templates/base.html:51
+msgid "Search"
+msgstr "Поиск"
+
+#: app/models/profile.py:34
+msgid "The profile was successfully created"
+msgstr "Запись успешно удалена."
+
+#: app/models/profile.py:38 app/models/task.py:48
+msgid "An error occurred while creating a record."
+msgstr "Произошла ошибка при получении записи."
+
+#: app/models/profile.py:55
+msgid "An error occurred while changing the last order date"
+msgstr "Произошла ошибка при добавлении записи."
+
+#: app/models/profile.py:64
+msgid "The profile was successfully deleted"
+msgstr "Профиль успешно удален."
+
+#: app/models/profile.py:68
+msgid "An error occurred while deleting a profile."
+msgstr "Произошла ошибка при удалении записи."
+
+#: app/models/task.py:32
+msgid "An error occurred while retrieving records."
+msgstr "Произошла ошибка при получении записей."
+
+#: app/models/task.py:44
+msgid "The record was successfully created"
+msgstr "Запись успешно добавлена."
+
+#: app/models/task.py:56
+msgid "The record was successfully deleted"
+msgstr "Запись успешно удалена."
+
+#: app/models/task.py:60
+msgid "An error occurred while deleting a record."
+msgstr "Произошла ошибка при удалении записи."
+
+#: app/models/task.py:73
+msgid "The record has been transferred to the archive"
+msgstr "Запись успешно перенесена."
+
+#: app/models/task.py:77
+msgid "An error occurred while transferring a recording to the archive"
+msgstr "Произошла ошибка при переносе записи."
+
+#: app/templates/base.html:33
+msgid "Archive"
+msgstr "Архив"
+
+#: app/templates/base.html:37 app/templates/users/clients.html:13
+#: app/users/routes.py:20
+msgid "Clients"
+msgstr "Клиенты"
+
+#: app/templates/base.html:41
+msgid "Logout"
+msgstr "Выход"
+
+#: app/templates/search.html:6
+msgid "Search Results"
+msgstr "Результаты поиска"
+
+#: app/templates/search.html:21
+msgid "In progress"
+msgstr "В процессе"
+
+#: app/templates/search.html:50
+msgid "In archive"
+msgstr "Архив"
+
+#: app/templates/desk/calendar.html:19 app/templates/search.html:78
+msgid "Previous"
+msgstr "Предыдущий"
+
+#: app/templates/desk/calendar.html:22 app/templates/search.html:83
+msgid "Next"
+msgstr "Следующий"
+
+#: app/templates/auth/login.html:15 app/templates/auth/login.html:38
+msgid "Sign in"
+msgstr "Вход"
+
+#: app/templates/auth/login.html:31
+msgid "Forgot Your Password?"
+msgstr "Забыли пароль?"
+
+#: app/templates/auth/login.html:44
+msgid "New User?"
+msgstr "Новый пользователь?"
+
+#: app/templates/auth/login.html:46
+msgid "Click to Register!"
+msgstr "Нажмите для регистрации!"
+
+#: app/templates/auth/register.html:15
+msgid "Registration"
+msgstr "Регистрация"
+
+#: app/templates/auth/reset_password.html:7
+msgid "Please enter new password"
+msgstr "Пожалуйста, введите новый пароль"
+
+#: app/templates/auth/reset_password.html:22
+msgid "Change"
+msgstr "Изменить"
+
+#: app/templates/auth/reset_password_request.html:7
+msgid "Please enter your email"
+msgstr "Пожалуйста, введите ваш адрес электронной почты"
+
+#: app/templates/auth/reset_password_request.html:21
+msgid "Continue"
+msgstr "Продолжить"
+
+#: app/templates/desk/add_client_task.html:8
+#: app/templates/desk/add_common_task.html:8
+#: app/templates/users/create_client.html:8
+msgid "Adding Record"
+msgstr "Добавление записи"
+
+#: app/templates/desk/archive.html:58
+msgid "Return"
+msgstr "Вернуть"
+
+#: app/templates/desk/calendar.html:37
+msgid "Monday"
+msgstr "Понедельник"
+
+#: app/templates/desk/calendar.html:38
+msgid "Mo"
+msgstr "Пн"
+
+#: app/templates/desk/calendar.html:40
+msgid "Tuesday"
+msgstr "Вторник"
+
+#: app/templates/desk/calendar.html:41
+msgid "Tu"
+msgstr "Вт"
+
+#: app/templates/desk/calendar.html:43
+msgid "Wednesday"
+msgstr "Среда"
+
+#: app/templates/desk/calendar.html:44
+msgid "We"
+msgstr "Ср"
+
+#: app/templates/desk/calendar.html:46
+msgid "Thursday"
+msgstr "Четверг"
+
+#: app/templates/desk/calendar.html:47
+msgid "Th"
+msgstr "Чт"
+
+#: app/templates/desk/calendar.html:49
+msgid "Friday"
+msgstr "Пятница"
+
+#: app/templates/desk/calendar.html:50
+msgid "Fr"
+msgstr "Пт"
+
+#: app/templates/desk/calendar.html:52
+msgid "Saturday"
+msgstr "Суббота"
+
+#: app/templates/desk/calendar.html:53
+msgid "Sa"
+msgstr "Сб"
+
+#: app/templates/desk/calendar.html:55
+msgid "Sunday"
+msgstr "Воскресенье"
+
+#: app/templates/desk/calendar.html:56
+msgid "Su"
+msgstr "Вс"
+
+#: app/templates/desk/calendar.html:107
+msgid "Close"
+msgstr "Закрыть"
+
+#: app/templates/desk/calendar.html:108 app/templates/desk/task_board.html:12
+#: app/templates/users/profile.html:73
+msgid "Add record"
+msgstr "Добавить запись"
+
+#: app/templates/desk/select_client.html:11
+msgid "Select type of client for adding new record"
+msgstr "Выберите тип клиента для добавления новой записи"
+
+#: app/templates/desk/select_client.html:22
+msgid "Existing client"
+msgstr "Существующий клиент"
+
+#: app/templates/desk/select_client.html:32
+msgid "New client"
+msgstr "Новый клиент"
+
+#: app/templates/desk/task_board.html:58
+msgid "Done"
+msgstr "Выполнено"
+
+#: app/templates/users/clients.html:20
+msgid "Add client"
+msgstr "Добавить клиента"
+
+#: app/templates/users/profile.html:22
+msgid "Profile"
+msgstr "Профиль"
+
+#: app/templates/users/profile.html:58 app/users/forms.py:21
+msgid "About client:"
+msgstr "О клиенте:"
+
+#: app/templates/users/profile.html:62
+msgid "Last order:"
+msgstr "Последний заказ:"
+
+#: app/templates/users/profile.html:69
+msgid "Last visit"
+msgstr "Был онлайн"
+
+#: app/templates/users/profile.html:82
+msgid "Order history"
+msgstr "История заказов"
+
+#: app/users/forms.py:16
+msgid "Phone number:"
+msgstr "Номер:"
+
+#: app/users/routes.py:60
+msgid "New Client"
+msgstr "Новый клиент"
+
+#~ msgid "Only numbers allowed"
+#~ msgstr "Разрешены только числа"
+

@@ -1,0 +1,51 @@
+{% extends 'base.html' %}
+
+
+{% block main %}
+  <div class="container-xxl">
+    <div class="row" style="padding: 100px 12px 40px;">
+      <h3 class="col-12 col-sm-10">
+        {{ _('Adding Record') }}
+      </h3>
+    </div>
+
+
+    <div class="card-group" style="margin-bottom: 25px;">
+      <div class="card shadow-sm">
+        <form method="post">
+          <div class="card-header" style="padding: 16px;"></div>
+          <div class="card-body" style="padding-top: 0;">
+            {{ form.hidden_tag() }}
+
+            <div class="row">
+              {% for field in form if field.name in ['first_name', 'last_name', 'price', 'number'] %}
+                <div class="col-sm-6">
+                  {{ field.label(class="card-text", style="padding: 10px;") }}
+                  {{ field(class="form-control me-2", autocomplete="off") }}
+                  {% if field.errors %}
+                    <span style="color: #d9534f; margin-left: 5px;">{{ field.errors[0] }}</span>
+                  {% endif %}
+                </div>
+              {% endfor %}
+            </div>
+
+            {% for field in form if field.name in ['address', 'about_client'] %}
+              {{ field.label(class="card-text", style="padding: 10px;") }}
+              {{ field(class="form-control me-2", autocomplete="off") }}
+              {% if field.errors %}
+                <span style="color: #d9534f; margin-left: 5px;">{{ field.errors[0] }}</span>
+              {% endif %}
+            {% endfor %}
+
+          </div>
+
+          <div class="card-footer" style="padding:0 16px 32px;" >
+            <div style="padding: 16px 0 20px;">
+              {{ form.submit(class="btn btn-outline-primary float-end") }}
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+{% endblock %}

@@ -1,0 +1,116 @@
+{% extends 'base.html' %}
+
+
+{% block calendar_menu %}
+active
+{% endblock %}
+
+
+{% block main %}
+  <div class="container-xxl">
+    <form method="post">
+      <div class="row" style="padding: 100px 12px 25px;">
+        <h3 class="col-12 col-sm-6 col-lg-8" style="margin-bottom: 15px;">
+          {{ _('Calendar') }} {{ month }}.{{ year }}
+        </h3>
+        <div class="btn-group btn-group-md col col-sm-6 col-lg-4">
+          <button name="last" type="submit"
+             class="btn btn-outline-primary"
+             style="padding: 10px;">{{ _('Previous') }}</button>
+          <button name="next" type="submit"
+             class="btn btn-outline-primary"
+             style="padding: 10px;">{{ _('Next') }}</button>
+        </div>
+      </div>
+    </form>
+
+    <div class="row">
+      {% for day in days %}
+        <div class="col-4 col-md-3 col-lg-2 card-group" style="margin-bottom: 25px;">
+          <button type="button" data-bs-toggle="modal"
+                  data-bs-target="#calendar_modal{{ day[0] }}"
+                  style="box-shadow: none; border: none; line-height: initial;
+                         padding: 0; background-color: none; width: 100%;">
+            <div class="card shadow-sm">
+              <div class="card-header" id="blue-title{{ day[0] }}" style="text-align: center;">
+                {% if day[1] == 0 %}
+                  <div class="d-none d-sm-block">{{ _('Monday') }}</div>
+                  <div class="d-block d-sm-none">{{ _('Mo') }}</div>
+                {% elif day[1] == 1 %}
+                  <div class="d-none d-sm-block">{{ _('Tuesday') }}</div>
+                  <div class="d-block d-sm-none">{{ _('Tu') }}</div>
+                {% elif day[1] == 2 %}
+                  <div class="d-none d-sm-block">{{ _('Wednesday') }}</div>
+                  <div class="d-block d-sm-none">{{ _('We') }}</div>
+                {% elif day[1] == 3 %}
+                  <div class="d-none d-sm-block">{{ _('Thursday') }}</div>
+                  <div class="d-block d-sm-none">{{ _('Th') }}</div>
+                {% elif day[1] == 4 %}
+                  <div class="d-none d-sm-block">{{ _('Friday') }}</div>
+                  <div class="d-block d-sm-none">{{ _('Fr') }}</div>
+                {% elif day[1] == 5 %}
+                  <div class="d-none d-sm-block">{{ _('Saturday') }}</div>
+                  <div class="d-block d-sm-none">{{ _('Sa') }}</div>
+                {% elif day[1] == 6 %}
+                  <div class="d-none d-sm-block">{{ _('Sunday') }}</div>
+                  <div class="d-block d-sm-none">{{ _('Su') }}</div>
+                {% endif %}
+              </div>
+              <div class="card-body" style="text-align: center;">
+                {{ day[0] }}
+              </div>
+            </div>
+          </button>
+        </div>
+
+      <!-- Calendar Modal -->
+        <div class="modal fade" id="calendar_modal{{ day[0] }}" tabindex="-1"
+             aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+            <div class="modal-content">
+
+              {% for i in tasks if '-' + month|string + '-' + day[0]|string in i.date %}
+                <style>#blue-title{{ day[0] }} {background-color: #0d6efd; color: #fff;}</style>
+                <div class="card-header">
+                  <h5 class="modal-title">
+                    {{ day[0] }}.{{ month }}.{{ year }}
+                  </h5>
+                </div>
+                <div class="modal-body" style="padding: 16px;">
+                  <p class="card-text">{{ _('Address:') }} {{ i.address }}</p>
+                </div>
+                <div class="modal-body" style="padding: 0 16px 16px;">
+                  <p class="card-text">{{ _('Price:') }} {{ i.price }}</p>
+                </div>
+                <div class="modal-body" style="padding: 0 16px 16px;">
+                  <p class="card-text">{{ _('Note:') }} {{ i.note }}</p>
+                </div>
+              {% endfor %}
+
+              {% for i in archives if '-' + month|string + '-' + day[0]|string in i.date %}
+                <style>#blue-title{{ day[0] }} {background-color: #e3f2fd;}</style>
+                <div class="card-header">
+                  <h5 class="modal-title">
+                    {{ day[0] }}.{{ month }}.{{ year }}
+                  </h5>
+                </div>
+                <div class="modal-body" style="padding: 16px;">
+                  <p class="card-text">{{ _('Address:') }} {{ i.address }}</p>
+                </div>
+                <div class="modal-body" style="padding: 0 16px 16px;">
+                  <p class="card-text">{{ _('Note:') }} {{ i.note }}</p>
+                </div>
+              {% endfor %}
+
+              <div class="card-footer">
+                <button type="button" class="btn btn-outline-secondary float-end"
+                         data-bs-dismiss="modal">{{ _('Close') }}</button>
+                <a href="{{ url_for('desk.get_client_type') }}" class="btn btn-outline-primary">{{ _('Add record') }}</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+{% endblock %}

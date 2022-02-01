@@ -1,0 +1,91 @@
+{% extends 'base.html' %}
+
+
+{% block clients_menu %}
+active
+{% endblock %}
+
+
+{% block main %}
+  <div class="container-xxl" style="padding: 100px 12px 25px;">
+
+    {% for cat, msg in get_flashed_messages(True) %}
+    <div class="flash_{{cat}}">{{msg}}</div>
+    {% endfor %}
+
+    <div style="margin-bottom: 25px;">
+      <div class="card shadow-sm">
+        <div class="card-header">
+          <form method="post">
+            <div class="row" style="padding-top: 5px; margin-right: 0;">
+              <h5 class="col-9 col-sm-10 col-lg-11" style="margin: 0;">
+                {{ _('Profile') }}
+              </h5>
+              <div class="col-3 col-sm-2 col-lg-1 float-end">
+                <button name="edit" type="submit" value="{{ client.id }}"
+                        class="btn" style="padding: 0 0 8px 0;">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                       fill="currentColor" class="bi bi-pencil" viewBox="0 0 16 16"
+                       style="position: relative; bottom: 2px;">
+                    <path d="M12.146.146a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1 0 .708l-10
+                          10a.5.5 0 0 1-.168.11l-5 2a.5.5 0 0 1-.65-.65l2-5a.5.5 0 0 1
+                          .11-.168l10-10zM11.207 2.5L13.5 4.793 14.793 3.5 12.5 1.207 11.207
+                          2.5zm1.586 3L10.5 3.207 4 9.707V10h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5
+                          0 0 1 .5.5v.5h.293l6.5-6.5zm-9.761 5.175l-.106.106-1.528 3.821
+                          3.821-1.528.106-.106A.5.5 0 0 1 5 12.5V12h-.5a.5.5 0 0
+                          1-.5-.5V11h-.5a.5.5 0 0 1-.468-.325z"/>
+                  </svg>
+                </button>
+                <button name="delete_profile" type="submit"
+                          class="btn-close float-end" aria-label="Close">
+                </button>
+              </div>
+
+            </div>
+          </form>
+        </div>
+
+        <div class="row">
+          <div class="card-body col-sm-3" style="padding: 8px 16px 8px;">
+            <img width="100%" src="{{ client.avatar(256) }}">
+          </div>
+          <div class="card-body col-sm-9">
+            <p class="card-text" style="font-weight: 500; font-size: 24px;">
+              {{ client.first_name }} {{ client.last_name }}</p>
+            <p class="card-text" style="padding: 4px 16px;">
+              {{ _('Address:') }} {{ client.address }}</p>
+            <p class="card-text" style="padding: 4px 16px;">
+              {{ _('About client:') }} {{ client.about_me }}</p>
+            <p class="card-text" style="padding: 4px 16px;">
+              {{ _('Price:') }} {{ client.price }}</p>
+            <p class="card-text" style="padding: 4px 16px;">
+              {{ _('Last order:') }} {{ client.last_order }}</p>
+          </div>
+        </div>
+
+        <div class="card-footer" style="padding: 10px 25px">
+          <div class="row">
+            <h6 class="col-10" style="padding: 10px 5px; margin: 0;">
+              {{ _('Last visit') }}: {{ last_visit }}
+            </h6>
+            <a href="{{ url_for('desk.new_client_task') }}"
+               class="btn btn-outline-primary col col-sm-2 float-end"
+               style="padding: 10px;">{{ _('Add record') }}
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="card shadow-sm">
+      <div class="card-header"><h5>{{ _('Order history') }}</h5></div>
+      <div class="card-body" style="padding: 8px 16px 8px;">
+        {% for date in history %}
+        {{ date }} <br>
+        {% endfor %}
+      </div>
+    </div>
+
+  </div>
+{% endblock %}

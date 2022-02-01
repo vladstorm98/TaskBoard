@@ -1,0 +1,67 @@
+{% extends 'base.html' %}
+
+
+{% block archive_menu %}
+active
+{% endblock %}
+
+
+{% block main %}
+  <div class="container-xxl">
+    <div class="row" style="padding: 100px 12px 25px;">
+      <h3 class="col-12 col-sm-10" style="margin-bottom: 15px;">
+        {{ _('Records archive') }}
+      </h3>
+    </div>
+
+    {% for cat, msg in get_flashed_messages(True) %}
+    <div class="flash_{{cat}}">{{msg}}</div>
+    {% endfor %}
+
+    <div class="row">
+    {% for task in tasks %}
+      <div class="col-12 col-md-6 col-lg-4 card-group" style="margin-bottom: 25px;">
+        <div class="card shadow-sm">
+          <div class="card-header">
+            <form method="post">
+              <div class="row" style="padding-top: 5px;">
+                <h5 class="col-11">{{ task.title }}</h5>
+              </div>
+            </form>
+          </div>
+
+          {% if task.name != None %}
+            <div class="card-body" style="padding: 8px 16px 8px;">
+              <p class="card-text">{{ task.name }}</p>
+            </div>
+          {% endif %}
+
+          <div class="card-body" style="padding: 8px 16px 8px;">
+            {{ _('Address:') }} {{ task.address }}
+          </div>
+
+          <div class="card-body" style="padding: 8px 16px 8px;">
+            {{ _('Price:') }} {{ task.price }}
+          </div>
+
+          {% if task.note != None %}
+            <div class="card-body" style="padding: 8px 16px 8px;">
+              {{ _('Note:') }} {{ task.note }}
+            </div>
+          {% endif %}
+
+          <div class="card-footer">
+             <form method="post">
+              <p class="card-text" style="padding-top: 15px;">{{ task.date }}</p>
+              <div class="card-body" style="position: absolute; bottom: 0; right: 0;">
+                <button name="desk" type="submit" value="{{ task.id }}"
+                        class="btn btn-outline-primary">{{ _('Return') }}</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    {% endfor %}
+  </div>
+</div>
+{% endblock %}

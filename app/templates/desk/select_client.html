@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+
+
+{% block main %}
+  <div class="container-xxl">
+    <div class="row" style="padding: 130px 12px 25px;"></div>
+
+    <div class="card text-center">
+      <div class="card-header">
+        <h5 class="card-title" style="padding-top: 8px;">
+          {{ _('Select type of client for adding new record') }}
+        </h5>
+      </div>
+      <div class="card-body">
+
+        <div class="row">
+          <div class="col-sm-6">
+            <form method="post">
+              <div class="card-body text-center">
+                <button name="existing_client" type="submit" style="padding: 15px 50px;"
+                        class="btn btn-outline-primary btn-lg">
+                  {{ _('Existing client') }}
+                </button>
+              </div>
+            </form>
+          </div>
+          <div class="col-sm-6">
+            <form method="post">
+              <div class="card-body text-center">
+                <button name="new_client" type="submit" style="padding: 15px 50px;"
+                        class="btn btn-outline-primary btn-lg">
+                  {{ _('New client') }}
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+      <div class="card-footer" style="padding: 15px;"></div>
+    </div>
+
+
+  </div>
+{% endblock %}
